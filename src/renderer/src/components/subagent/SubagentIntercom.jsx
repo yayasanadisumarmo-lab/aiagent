@@ -474,7 +474,7 @@ export default function SubagentIntercom({ subagentId, onClose }) {
               </div>
               <div className="chat-header text-[11px] opacity-50 mb-1 flex items-center gap-1.5">
                 <span className={isUser ? 'text-accent font-semibold' : ''}>
-                  {isUser ? 'Creator (Mada)' : 'Lead Agent (Mark)'}
+                  {isUser ? 'Creator (Mada)' : 'Lead Agent (P.A.I.J.O.)'}
                 </span>
                 <span className="text-[10px]">
                   {new Date(item.timestamp).toLocaleTimeString([], {

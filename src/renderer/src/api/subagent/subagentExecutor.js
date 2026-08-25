@@ -27,9 +27,9 @@ export async function runSubagentTurn(subagentId, incomingMessage = null, sender
   // Rekam pesan masuk jika ada
   if (incomingMessage) {
     const isUser = senderType === 'user'
-    const tag = isUser ? '[DARI CREATOR / USER (MADA)]:' : '[DARI LEAD AGENT (MARK)]:'
+    const tag = isUser ? '[DARI USER / MAS]:' : '[DARI LEAD AGENT (PAIJO)]:'
     await subagentStore.addMessage(subagentId, {
-      sender: isUser ? 'user' : 'mark',
+      sender: isUser ? 'user' : 'paijo',
       role: 'user',
       content: `${tag} ${incomingMessage}`
     })

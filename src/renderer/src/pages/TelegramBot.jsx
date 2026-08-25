@@ -120,7 +120,7 @@ const TelegramBot = () => {
                     <span className="capitalize text-xs">{status}</span>
                   </div>
                 </div>
-                <p className="opacity-50 text-sm mt-1">Kelola dan pantau interaksi Mark via Telegram.</p>
+                <p className="opacity-50 text-sm mt-1">Kelola dan pantau interaksi P.A.I.J.O. via Telegram.</p>
               </div>
             </div>
             <div className="flex items-center gap-2">
@@ -253,7 +253,7 @@ const TelegramBot = () => {
         {isThinking && (
           <div className="chat chat-end animate-fade-in">
             <div className="chat-header opacity-50 text-xs mb-1">
-              Mark sedang memproses pesan {currentSender}...
+              P.A.I.J.O. sedang memproses pesan {currentSender}...
             </div>
             <div className="chat-bubble chat-bubble-info bg-info/20 text-info border border-info/30">
               <span className="loading loading-dots loading-sm"></span>
@@ -311,7 +311,7 @@ const TelegramBot = () => {
                   className="input input-bordered w-full font-mono text-sm"
                 />
                 <span className="text-xs opacity-60 mt-1">
-                  Daftar username Telegram (@username) yang diizinkan mengontrol Mark. Pisahkan dengan koma.
+                  Daftar username Telegram (@username) yang diizinkan mengontrol P.A.I.J.O.. Pisahkan dengan koma.
                 </span>
               </div>
 

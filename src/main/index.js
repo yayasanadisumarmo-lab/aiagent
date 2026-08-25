@@ -389,7 +389,7 @@ ipcMain.handle('app:get-documents-path', () => app.getPath('documents'))
 
 app.whenReady().then(async () => {
   // Set app user model id for windows
-  electronApp.setAppUserModelId('com.mark.agent')
+  electronApp.setAppUserModelId('com.paijo.agent')
 
   // Run on startup background (Only if packaged, to avoid raw electron.exe startup)
   if (app.isPackaged) {
@@ -431,10 +431,10 @@ app.whenReady().then(async () => {
     .getFileIcon(process.execPath, { size: 'small' })
     .then((exeIcon) => {
       tray = new Tray(exeIcon)
-      tray.setToolTip('Mark AI Assistant')
+      tray.setToolTip('PAIJO AI Assistant')
 
       const contextMenu = Menu.buildFromTemplate([
-        { label: 'Buka Mark', click: () => mainWindow.show() },
+        { label: 'Buka PAIJO', click: () => mainWindow.show() },
         {
           label: 'Telegram Bot',
           click: () => {
@@ -470,7 +470,7 @@ app.whenReady().then(async () => {
     .catch(() => {
       // Fallback jika gagal (misal saat masih mode npm run dev)
       tray = new Tray(nativeImage.createFromPath(icon).resize({ width: 16, height: 16 }))
-      tray.setToolTip('Mark AI Assistant')
+      tray.setToolTip('PAIJO AI Assistant')
     })
   // Global Shortcut (Toggle)
   // Menggunakan Ctrl+Alt+M untuk menghindari bentrok dengan shortcut OS atau aplikasi lain (misal: Discord/AMD)

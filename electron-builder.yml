@@ -1,5 +1,5 @@
-appId: com.mark.agent
-productName: 'Mark Agent'
+appId: com.paijo.agent
+productName: 'PAIJO Agent'
 directories:
   buildResources: resources
 files:
@@ -16,7 +16,7 @@ asarUnpack:
   - "node_modules/youtube-dl-exec/**/*"
   - "**/pc-agent-scripts/**/*"
 win:
-  executableName: 'Mark Agent'
+  executableName: 'PAIJO Agent'
 nsis:
   artifactName: ${name}-${version}-setup.${ext}
   shortcutName: ${productName}

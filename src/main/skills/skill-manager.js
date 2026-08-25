@@ -5,7 +5,7 @@ import matter from 'gray-matter'
 import AdmZip from 'adm-zip'
 
 const getSkillDir = () => {
-  const dir = path.join(app.getPath('documents'), 'Mark Skills')
+  const dir = path.join(app.getPath('documents'), 'PAIJO Skills')
   if (!fs.existsSync(dir)) {
     fs.mkdirSync(dir, { recursive: true })
   }
@@ -57,7 +57,7 @@ export const setupSkillIPC = () => {
         let isSkill = false
         let name = ''
         let filePath = ''
-        let description = 'Custom Mark Skill'
+        let description = 'Custom PAIJO Skill'
 
         if (stat.isDirectory()) {
           filePath = path.join(fullPath, 'SKILL.md')

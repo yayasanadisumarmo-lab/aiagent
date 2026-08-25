@@ -2,8 +2,8 @@ import { fetchAI, cleanAndParse } from './core'
 import { saveLearnedSkill } from '../db'
 
 /**
- * Dedicated Skill Synthesizer (MARK Meta-Learning Engine)
- * Dieksekusi secara khusus ketika Mark menyetel `should_learn: true` pada giliran terakhir.
+ * Dedicated Skill Synthesizer (PAIJO Meta-Learning Engine)
+ * Dieksekusi secara khusus ketika PAIJO menyetel `should_learn: true` pada giliran terakhir.
  * Menghasilkan objek skill murni { name, description, content } dan menyimpannya ke Dexie.
  */
 export async function synthesizeSkillAndSave({
@@ -28,7 +28,7 @@ export async function synthesizeSkillAndSave({
       })
       .join('\n')
 
-    const promptText = `Berikut adalah sesi kerja Mark yang berhasil:
+    const promptText = `Berikut adalah sesi kerja PAIJO yang berhasil:
 
 [PERMINTAAN USER]:
 ${userPrompt ? userPrompt.slice(0, 500) : '(Tidak ada teks permintaan)'}
@@ -44,13 +44,13 @@ ${finalAnswer ? finalAnswer.slice(0, 600) : '(Tidak ada jawaban akhir)'}
 
 Tugasmu: Rumuskan alur kerja prosedural di atas menjadi berkas SKILL.md yang terstruktur dan dapat digunakan kembali.`
 
-    const systemPrompt = `Kamu adalah MARK Meta-Learning Synthesizer Engine.
-Tugasmu adalah menyaring alur kerja teknis yang baru saja BERHASIL diselesaikan oleh Mark menjadi sebuah PROSEDUR SKILL (.md) yang rapi, modular, dan dapat dieksekusi kembali secara otomatis oleh Mark di masa depan via 'read-skill'.
+    const systemPrompt = `Kamu adalah PAIJO Meta-Learning Synthesizer Engine.
+Tugasmu adalah menyaring alur kerja teknis yang baru saja BERHASIL diselesaikan oleh PAIJO menjadi sebuah PROSEDUR SKILL (.md) yang rapi, modular, dan dapat dieksekusi kembali secara otomatis oleh PAIJO di masa depan via 'read-skill'.
 
 # ATURAN PENYUSUNAN SKILL:
 1. "name": Buat nama skill dalam format kebab-case (huruf kecil, gunakan strip '-', contoh: "scrape-dynamic-table", "setup-wsl-node", "fix-powershell-policy").
-2. "description": Tulis 1-2 kalimat ringkas menjelaskan kegunaan skill ini dan kapan Mark harus memanggilnya.
-3. "content": Tulis isi panduan teknis langkah-demi-langkah dalam format Markdown:
+2. "description": Tulis 1-2 kalimat ringkas menjelaskan kegunaan skill ini dan kapan PAIJO harus memanggilnya.
+3. "content": Tulis isi panduan teknis langkah-demi-langkah dalam format PAIJOdown:
    - Gambaran umum tujuan prosedur.
    - Langkah kerja berurutan (Sebutkan nama tool dan parameter query yang tepat).
    - Validasi hasil / pengujian.
@@ -86,7 +86,7 @@ Tugasmu adalah menyaring alur kerja teknis yang baru saja BERHASIL diselesaikan 
 
     const savedSkill = await saveLearnedSkill({
       name: parsed.name,
-      description: parsed.description || 'Prosedur teknis teruji buatan Mark',
+      description: parsed.description || 'Prosedur teknis teruji buatan PAIJO',
       content: parsed.content
     })
 

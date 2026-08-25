@@ -524,10 +524,10 @@ const InputBar = ({ onSubmit, isLoading, isRecording, isProcessing, audioIntensi
           onKeyDown={handleKeyDown}
           placeholder={
             isLoading
-              ? 'Beri intervensi ke Mark...'
+              ? 'Beri instruksi ke P.A.I.J.O...'
               : attachedFiles.length > 0
                 ? 'Tambah instruksi untuk file terlampir...'
-                : 'Tanya apapun ke Mark...'
+                : 'Tanya atau berikan perintah ke P.A.I.J.O, Mas Wun...'
           }
           className="flex-1 resize-none bg-transparent border-none outline-none text-white px-3 py-2.5 text-sm md:text-base leading-normal placeholder:text-white/30 disabled:opacity-50 no-scrollbar"
         />
@@ -558,7 +558,7 @@ const InputBar = ({ onSubmit, isLoading, isRecording, isProcessing, audioIntensi
       <ConfirmModal
         isOpen={showAbortConfirm}
         title="Hard Abort Proses?"
-        message="Yakin mau memberhentikan proses Mark secara paksa? Tindakan ini akan menghentikan secara langsung semua alat yang sedang berjalan dan memutuskan koneksi ke otak AI-nya seketika."
+        message="Yakin mau memberhentikan proses P.A.I.J.O secara paksa? Tindakan ini akan menghentikan secara langsung semua alat yang sedang berjalan dan memutuskan koneksi seketika."
         confirmText="Berhentikan"
         cancelText="Batal"
         isError={true}

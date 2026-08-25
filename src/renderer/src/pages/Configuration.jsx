@@ -76,7 +76,7 @@ const ConfigCameraPreview = ({ deviceId, enabled }) => {
 
 const Configuration = ({ isFirstSetup = false, onSetupComplete = null }) => {
   const [config, setConfig] = useState({
-    personality: 'Santai layaknya seorang teman dan suka bercanda.',
+    personality: 'Ramah, setia, sopan, cekatan, memanggil user Mas Wun, cerdas, solutif, dan punya selera humor santai yang asik ala P.A.I.J.O.',
     model: 'google/gemma-3-4b',
     temperature: 0,
     context: 10,
@@ -110,7 +110,7 @@ const Configuration = ({ isFirstSetup = false, onSetupComplete = null }) => {
   const handleTestVoice = async () => {
     setPlayingTest(true)
     const testText =
-      'Halo bro! Gue Mark, asisten pribadi lo. Gimana suara gue sekarang? Udah mantap belum?'
+      'Halo Mas Wun! Saya P.A.I.J.O., asisten pribadi jenengan. Semua sistem siap jalan, monggo!'
     try {
       const audioBase64 = await window.api.textToSpeech(testText, config.ttsRate, config.ttsPitch)
       if (audioBase64) {
@@ -161,9 +161,9 @@ const Configuration = ({ isFirstSetup = false, onSetupComplete = null }) => {
           steps: [
             {
               popover: {
-                title: 'Halo, Selamat Datang di Mark! 👋',
+                title: 'Halo, Selamat Datang di P.A.I.J.O.! 👋',
                 description:
-                  'Mark adalah asisten AI pribadimu. Sebelum mulai ngobrol, ayo kita kenalan dulu sama pengaturan utamanya biar Mark bisa kerja maksimal buat kamu!',
+                  'P.A.I.J.O. adalah asisten AI pribadimu. Sebelum mulai ngobrol, ayo kita kenalan dulu sama pengaturan utamanya biar P.A.I.J.O. bisa kerja maksimal buat kamu!',
                 side: 'top',
                 align: 'center'
               }
@@ -183,7 +183,7 @@ const Configuration = ({ isFirstSetup = false, onSetupComplete = null }) => {
               popover: {
                 title: '2. Memori AI',
                 description:
-                  'Ini otak tempat Mark mengingat semuanya. Pilih Transformers.js kalau mau memori jalan 100% lokal tanpa ribet setup tambahan.',
+                  'Ini otak tempat P.A.I.J.O. mengingat semuanya. Pilih Transformers.js kalau mau memori jalan 100% lokal tanpa ribet setup tambahan.',
                 side: 'top',
                 align: 'start'
               }
@@ -201,9 +201,9 @@ const Configuration = ({ isFirstSetup = false, onSetupComplete = null }) => {
             {
               element: '#tour-persona',
               popover: {
-                title: '4. Kepribadian Mark',
+                title: '4. Kepribadian P.A.I.J.O.',
                 description:
-                  'Di sini kamu bebas nentuin gaya bicara Mark. Mau dia formal kayak asisten pro, atau santai kayak temen nongkrong? Tulis aja di sini!',
+                  'Di sini kamu bebas nentuin gaya bicara P.A.I.J.O.. Mau dia formal kayak asisten pro, atau santai kayak temen nongkrong? Tulis aja di sini!',
                 side: 'top',
                 align: 'start'
               }
@@ -213,7 +213,7 @@ const Configuration = ({ isFirstSetup = false, onSetupComplete = null }) => {
               popover: {
                 title: '5. Kreativitas AI',
                 description:
-                  'Temperature nentuin seberapa kreatif Mark. Angka kecil (0-0.3) bikin dia kaku tapi akurat, angka besar (0.7-1.0) bikin dia imajinatif dan luwes.',
+                  'Temperature nentuin seberapa kreatif P.A.I.J.O.. Angka kecil (0-0.3) bikin dia kaku tapi akurat, angka besar (0.7-1.0) bikin dia imajinatif dan luwes.',
                 side: 'top',
                 align: 'start'
               }
@@ -223,7 +223,7 @@ const Configuration = ({ isFirstSetup = false, onSetupComplete = null }) => {
               popover: {
                 title: '6. Konteks Obrolan',
                 description:
-                  'Ini batas seberapa jauh Mark bisa mengingat riwayat chat dalam satu sesi. Makin besar angkanya, makin panjang ingatan dia, tapi makin berat juga kerjanya.',
+                  'Ini batas seberapa jauh P.A.I.J.O. bisa mengingat riwayat chat dalam satu sesi. Makin besar angkanya, makin panjang ingatan dia, tapi makin berat juga kerjanya.',
                 side: 'top',
                 align: 'start'
               }
@@ -233,7 +233,7 @@ const Configuration = ({ isFirstSetup = false, onSetupComplete = null }) => {
               popover: {
                 title: '7. Pengaturan Suara',
                 description:
-                  'Atur kecepatan (Rate) dan tinggi-rendahnya nada suara (Pitch) Mark. Kamu bisa klik "Test Suara Mark" buat dengerin hasil racikanmu!',
+                  'Atur kecepatan (Rate) dan tinggi-rendahnya nada suara (Pitch) P.A.I.J.O.. Kamu bisa klik "Test Suara P.A.I.J.O." buat dengerin hasil racikanmu!',
                 side: 'top',
                 align: 'start'
               }
@@ -243,7 +243,7 @@ const Configuration = ({ isFirstSetup = false, onSetupComplete = null }) => {
               popover: {
                 title: '8. Telegram Bot Settings',
                 description:
-                  'Masukkan Telegram Bot Token dari @BotFather dan Telegram User ID dari @userinfobot agar kamu bisa mengontrol Mark jarak jauh via Telegram.',
+                  'Masukkan Telegram Bot Token dari @BotFather dan Telegram User ID dari @userinfobot agar kamu bisa mengontrol P.A.I.J.O. jarak jauh via Telegram.',
                 side: 'top',
                 align: 'start'
               }
@@ -253,7 +253,7 @@ const Configuration = ({ isFirstSetup = false, onSetupComplete = null }) => {
               popover: {
                 title: 'Simpan & Mulai',
                 description:
-                  'Kalau udah diisi semua (termasuk API key kalau pakai Cloud), klik di sini buat mulai ngobrol sama Mark!',
+                  'Kalau udah diisi semua (termasuk API key kalau pakai Cloud), klik di sini buat mulai ngobrol sama P.A.I.J.O.!',
                 side: 'top',
                 align: 'center'
               }
@@ -321,7 +321,7 @@ const Configuration = ({ isFirstSetup = false, onSetupComplete = null }) => {
     const url = URL.createObjectURL(blob)
     const a = document.createElement('a')
     a.href = url
-    a.download = `mark-chat-history-${Date.now()}.json`
+    a.download = `paijo-chat-history-${Date.now()}.json`
     a.click()
     URL.revokeObjectURL(url)
   }
@@ -534,12 +534,12 @@ const Configuration = ({ isFirstSetup = false, onSetupComplete = null }) => {
             )}
             <div>
               <h1 className="text-2xl font-bold">
-                {isFirstSetup ? 'Selamat Datang di Mark!' : 'Pengaturan Mark'}
+                {isFirstSetup ? 'Selamat Datang di P.A.I.J.O!' : 'Pengaturan P.A.I.J.O'}
               </h1>
               <p className="opacity-50 text-sm mt-1">
                 {isFirstSetup
-                  ? 'Sebelum mulai ngobrol, atur provider AI dan pengaturan dasar lainnya di bawah ini.'
-                  : 'Sesuaikan perilaku Mark dengan preferensimu.'}
+                  ? 'Sebelum mulai berinteraksi, atur provider AI dan protokol sistem di bawah ini.'
+                  : 'Sesuaikan perilaku P.A.I.J.O dengan preferensi Mas.'}
               </p>
             </div>
           </div>
@@ -701,7 +701,7 @@ const Configuration = ({ isFirstSetup = false, onSetupComplete = null }) => {
                 <div>
                   <p className="text-sm font-semibold">Awareness Engine</p>
                   <p className="text-xs opacity-50 mt-1">
-                    Mengizinkan Mark membaca log sistem/aktivitas dan memulai obrolan secara
+                    Mengizinkan P.A.I.J.O. membaca log sistem/aktivitas dan memulai obrolan secara
                     proaktif di latar belakang.
                   </p>
                 </div>
@@ -719,7 +719,7 @@ const Configuration = ({ isFirstSetup = false, onSetupComplete = null }) => {
               <p className="text-sm font-semibold">Gaya Bicara dan Kepribadian</p>
               <textarea
                 className="textarea w-full h-72 leading-relaxed no-scrollbar resize-none"
-                placeholder="Deskripsikan kepribadian Mark..."
+                placeholder="Deskripsikan kepribadian P.A.I.J.O...."
                 value={config.personality}
                 onChange={handlePersonalityChange}
               />
@@ -826,7 +826,7 @@ const Configuration = ({ isFirstSetup = false, onSetupComplete = null }) => {
                   />
                 </label>
                 <span className="text-xs opacity-50 mt-2 block">
-                  Mengizinkan Mark menggunakan kamera (jika diminta) untuk melihat dunia fisik.
+                  Mengizinkan P.A.I.J.O. menggunakan kamera (jika diminta) untuk melihat dunia fisik.
                 </span>
               </div>
 
@@ -1115,10 +1115,10 @@ const Configuration = ({ isFirstSetup = false, onSetupComplete = null }) => {
                       <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z" />
                     </svg>
                   )}
-                  Test Suara Mark
+                  Test Suara P.A.I.J.O
                 </button>
                 <p className="text-[10px] opacity-30 mt-1.5 px-1">
-                  *Klik untuk mendengar suara Mark dengan settingan di atas tanpa perlu simpan dulu.
+                  *Klik untuk mendengar suara P.A.I.J.O dengan settingan di atas tanpa perlu simpan dulu.
                 </p>
               </div>
             </div>
@@ -1175,7 +1175,7 @@ const Configuration = ({ isFirstSetup = false, onSetupComplete = null }) => {
               {isDownloadingModel
                 ? 'Menyimpan...'
                 : isFirstSetup
-                  ? 'Simpan & Mulai Gunakan Mark'
+                  ? 'Simpan & Mulai Gunakan P.A.I.J.O'
                   : 'Simpan Pengaturan'}
             </button>
           </div>

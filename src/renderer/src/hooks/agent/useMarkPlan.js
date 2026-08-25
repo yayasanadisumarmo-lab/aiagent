@@ -1248,7 +1248,7 @@ export const useMarkPlan = ({
 
           // OS Notification
           if (window.api.showNotification && !document.hasFocus() && decision.answer) {
-            window.api.showNotification('Mark', decision.answer)
+            window.api.showNotification('P.A.I.J.O.', decision.answer)
           }
 
           // Tampilkan balasan final di chat UI

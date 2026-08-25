@@ -96,7 +96,7 @@ export const NATIVE_TOOLS = {
     execute: async (query) => {
       const skillName = (query || '').trim()
       if (!skillName) return { success: false, message: 'Nama skill kosong' }
-      const skillDir = path.join(os.homedir(), 'Documents', 'Mark Skills')
+      const skillDir = path.join(os.homedir(), 'Documents', 'PAIJO Skills')
 
       // 1. Cek jika folder skill berisi SKILL.md
       const folderSkillPath = path.join(skillDir, skillName, 'SKILL.md')
@@ -116,7 +116,7 @@ export const NATIVE_TOOLS = {
         return { success: true, content: await fs.promises.readFile(directPath, 'utf8') }
       }
 
-      return { success: false, message: `Skill '${skillName}' tidak ditemukan di folder 'Documents/Mark Skills'.` }
+      return { success: false, message: `Skill '${skillName}' tidak ditemukan di folder 'Documents/PAIJO Skills'.` }
     }
   },
   'browser-search': {
@@ -204,7 +204,7 @@ export const NATIVE_TOOLS = {
         let filePath = parts[0].trim()
 
         if (!path.isAbsolute(filePath)) {
-          const workspaceDir = path.join(os.homedir(), 'Documents', 'Mark Workspace')
+          const workspaceDir = path.join(os.homedir(), 'Documents', 'PAIJO Workspace')
           filePath = path.join(workspaceDir, filePath)
         }
 
@@ -549,7 +549,7 @@ export const NATIVE_TOOLS = {
   },
   'write-file': {
     needsApproval: true,
-    approvalMessage: (query) => `Mark ingin menulis/membuat file:\n${query.split('||')[0].trim()}`,
+    approvalMessage: (query) => `PAIJO ingin menulis/membuat file:\n${query.split('||')[0].trim()}`,
     handler: async (query) => {
       try {
         const parts = query.split('||')
@@ -563,7 +563,7 @@ export const NATIVE_TOOLS = {
         const content = parts.slice(1).join('||')
 
         if (!path.isAbsolute(filePath)) {
-          const workspaceDir = path.join(os.homedir(), 'Documents', 'Mark Workspace')
+          const workspaceDir = path.join(os.homedir(), 'Documents', 'PAIJO Workspace')
           filePath = path.join(workspaceDir, filePath)
         }
 
@@ -581,7 +581,7 @@ export const NATIVE_TOOLS = {
     needsApproval: true,
     approvalMessage: (query) => {
       const parts = query.split('||')
-      return `Mark ingin mengganti baris ${parts[1]} hingga ${parts[2]} di file:\n${parts[0].trim()}`
+      return `PAIJO ingin mengganti baris ${parts[1]} hingga ${parts[2]} di file:\n${parts[0].trim()}`
     },
     handler: async (query) => {
       try {
@@ -595,7 +595,7 @@ export const NATIVE_TOOLS = {
         let filePath = parts[0].trim()
 
         if (!path.isAbsolute(filePath)) {
-          const workspaceDir = path.join(os.homedir(), 'Documents', 'Mark Workspace')
+          const workspaceDir = path.join(os.homedir(), 'Documents', 'PAIJO Workspace')
           filePath = path.join(workspaceDir, filePath)
         }
 
@@ -627,12 +627,12 @@ export const NATIVE_TOOLS = {
   },
   'delete-file': {
     needsApproval: true,
-    approvalMessage: (query) => `Mark ingin MENGHAPUS file secara permanen:\n${query}`,
+    approvalMessage: (query) => `PAIJO ingin MENGHAPUS file secara permanen:\n${query}`,
     handler: async (query) => {
       try {
         let filePath = query.trim()
         if (!path.isAbsolute(filePath)) {
-          const workspaceDir = path.join(os.homedir(), 'Documents', 'Mark Workspace')
+          const workspaceDir = path.join(os.homedir(), 'Documents', 'PAIJO Workspace')
           filePath = path.join(workspaceDir, filePath)
         }
         if (!fs.existsSync(filePath))
@@ -650,7 +650,7 @@ export const NATIVE_TOOLS = {
       try {
         let targetDir = query.trim() || process.cwd()
         if (!path.isAbsolute(targetDir) && query.trim() !== '') {
-          const workspaceDir = path.join(os.homedir(), 'Documents', 'Mark Workspace')
+          const workspaceDir = path.join(os.homedir(), 'Documents', 'PAIJO Workspace')
           targetDir = path.join(workspaceDir, targetDir)
         }
         if (!fs.existsSync(targetDir))
@@ -692,7 +692,7 @@ export const NATIVE_TOOLS = {
   'run-powershell': {
     needsApproval: (query) => isDangerousCommand(query),
     approvalMessage: (query) =>
-      `Mark ingin mengeksekusi perintah PowerShell yang berpotensi BERBAHAYA:\n\n${query}`,
+      `PAIJO ingin mengeksekusi perintah PowerShell yang berpotensi BERBAHAYA:\n\n${query}`,
     handler: async (query) => {
       if (!query) return { success: false, message: 'Tidak ada perintah yang diberikan.' }
       try {
@@ -847,7 +847,7 @@ export const NATIVE_TOOLS = {
   },
   'browser-download': {
     needsApproval: true,
-    approvalMessage: (query) => `Mark ingin mendownload file dari browser:\n\n${query}`,
+    approvalMessage: (query) => `PAIJO ingin mendownload file dari browser:\n\n${query}`,
     handler: async (query, config) => {
       const parts = query.split('||')
       if (parts.length < 2) return { success: false, error: 'Format: URL||namafile.ext' }
@@ -896,7 +896,7 @@ export const NATIVE_TOOLS = {
   'os-key': {
     needsApproval: (query) => isDangerousKeyCombo(query),
     approvalMessage: (query) =>
-      `Mark ingin menekan shortcut keyboard yang berpotensi BERBAHAYA:\n\n${query}`,
+      `PAIJO ingin menekan shortcut keyboard yang berpotensi BERBAHAYA:\n\n${query}`,
     handler: async (query) => {
       try {
         const result = await executeKey(query)
@@ -999,7 +999,7 @@ export const NATIVE_TOOLS = {
   'os-control-open': {
     needsApproval: () => !isPCSessionOpen(),
     approvalMessage: () =>
-      'Mark ingin mengontrol fisik PC/desktop-mu (mengunci sesi sementara dan memunculkan overlay kontrol PC). Apakah kamu mengizinkan?',
+      'PAIJO ingin mengontrol fisik PC/desktop-mu (mengunci sesi sementara dan memunculkan overlay kontrol PC). Apakah kamu mengizinkan?',
     handler: async () => {
       try {
         const result = await openPCSession()
@@ -1085,7 +1085,7 @@ export const NATIVE_TOOLS = {
   'gdrive-upload': {
     needsApproval: true,
     approvalMessage: (query) =>
-      `Mark ingin mengunggah file ke Google Drive-mu:\n${query.split('||')[0]}`,
+      `PAIJO ingin mengunggah file ke Google Drive-mu:\n${query.split('||')[0]}`,
     handler: async (query, config) => {
       try {
         const parts = query.split('||')
@@ -1104,7 +1104,7 @@ export const NATIVE_TOOLS = {
     needsApproval: true,
     approvalMessage: (query) => {
       const parts = query.split('||')
-      return `Mark ingin membuat dokumen kosong baru di Google Drive:\nNama: ${parts[0]}\nTipe: ${parts[1] || 'doc'}`
+      return `PAIJO ingin membuat dokumen kosong baru di Google Drive:\nNama: ${parts[0]}\nTipe: ${parts[1] || 'doc'}`
     },
     handler: async (query, config) => {
       try {
@@ -1123,7 +1123,7 @@ export const NATIVE_TOOLS = {
   'gdrive-move': {
     needsApproval: true,
     approvalMessage: (query) =>
-      `Mark ingin memindahkan file di Google Drive.\nFile ID: ${query.split('||')[0]}\nFolder Tujuan ID: ${query.split('||')[1]}`,
+      `PAIJO ingin memindahkan file di Google Drive.\nFile ID: ${query.split('||')[0]}\nFolder Tujuan ID: ${query.split('||')[1]}`,
     handler: async (query, config) => {
       try {
         const parts = query.split('||')
@@ -1141,7 +1141,7 @@ export const NATIVE_TOOLS = {
   'gdrive-copy': {
     needsApproval: true,
     approvalMessage: (query) =>
-      `Mark ingin menduplikasi file di Google Drive.\nFile ID: ${query.split('||')[0]}\nNama Baru: ${query.split('||')[1]}`,
+      `PAIJO ingin menduplikasi file di Google Drive.\nFile ID: ${query.split('||')[0]}\nNama Baru: ${query.split('||')[1]}`,
     handler: async (query, config) => {
       try {
         const parts = query.split('||')
@@ -1180,7 +1180,7 @@ export const NATIVE_TOOLS = {
     needsApproval: true,
     approvalMessage: (query) => {
       const parts = query.split('||')
-      return `Mark ingin membuat jadwal baru di kalendermu:\nJudul: ${parts[0]}\nWaktu Mulai: ${parts[2]}`
+      return `PAIJO ingin membuat jadwal baru di kalendermu:\nJudul: ${parts[0]}\nWaktu Mulai: ${parts[2]}`
     },
     handler: async (query, config) => {
       try {
@@ -1207,7 +1207,7 @@ export const NATIVE_TOOLS = {
   },
   'gcalendar-delete': {
     needsApproval: true,
-    approvalMessage: (query) => `Mark ingin MENGHAPUS jadwal/event ini:\nEvent ID: ${query}`,
+    approvalMessage: (query) => `PAIJO ingin MENGHAPUS jadwal/event ini:\nEvent ID: ${query}`,
     handler: async (query, config) => {
       try {
         const clientId = config?.[0]?.googleClientId
@@ -1284,7 +1284,7 @@ export const NATIVE_TOOLS = {
     needsApproval: true,
     approvalMessage: (query) => {
       const parts = query.split('||')
-      return `Mark ingin MENGIRIM EMAIL baru.\nTujuan: ${parts[0]}\nSubjek: ${parts[1]}\nIsi Pesan:\n${parts[2].slice(0, 100)}...`
+      return `PAIJO ingin MENGIRIM EMAIL baru.\nTujuan: ${parts[0]}\nSubjek: ${parts[1]}\nIsi Pesan:\n${parts[2].slice(0, 100)}...`
     },
     handler: async (query, config) => {
       try {

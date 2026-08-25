@@ -277,10 +277,10 @@ const MarkHome = () => {
       <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-[0.03] pointer-events-none mix-blend-screen z-0" />
 
       {isBooting && (
-        <div className="fixed inset-0 bg-base-300 flex flex-col items-center justify-center gap-5 z-[999]">
+        <div className="fixed inset-0 bg-[#050914] flex flex-col items-center justify-center gap-5 z-[999]">
           <span className="loading loading-infinity w-16 text-primary"></span>
-          <p className="text-sm font-semibold tracking-[0.2em] text-white/40 uppercase animate-pulse">
-            Membangunkan Mark...
+          <p className="text-sm font-semibold tracking-[0.2em] text-amber-400 uppercase animate-pulse">
+            Membangunkan P.A.I.J.O...
           </p>
         </div>
       )}
@@ -310,18 +310,18 @@ const MarkHome = () => {
             }}
           >
             {/* Jarvis-Style Holographic HUD centered around Orb */}
-            <div className="absolute inset-0 m-auto flex items-center justify-center pointer-events-none mix-blend-screen opacity-50 z-0 scale-125">
-              <svg viewBox="0 0 500 500" className="w-[500px] h-[500px] absolute">
+            <div className="absolute inset-0 m-auto flex items-center justify-center pointer-events-none mix-blend-screen opacity-85 z-0 scale-125">
+              <svg viewBox="0 0 500 500" className="w-[500px] h-[500px] absolute drop-shadow-[0_0_12px_currentColor]" style={{ color: bgGlowColor }}>
                 {/* Outer Ring */}
                 <circle
                   cx="250"
                   cy="250"
                   r="230"
                   fill="none"
-                  stroke={bgGlowColor}
-                  strokeWidth="1"
-                  strokeDasharray="2 10"
-                  className="origin-center animate-[spin-slow_40s_linear_infinite]"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeDasharray="4 10"
+                  className="origin-center animate-[spin-slow_40s_linear_infinite] opacity-75"
                 />
 
                 {/* Middle Segmented Ring */}
@@ -330,10 +330,10 @@ const MarkHome = () => {
                   cy="250"
                   r="180"
                   fill="none"
-                  stroke={bgGlowColor}
-                  strokeWidth="2"
-                  strokeDasharray="80 20 10 20"
-                  className="origin-center animate-[spin-slow-reverse_30s_linear_infinite]"
+                  stroke="currentColor"
+                  strokeWidth="3"
+                  strokeDasharray="80 20 15 20"
+                  className="origin-center animate-[spin-slow-reverse_30s_linear_infinite] opacity-90"
                 />
 
                 {/* Inner Ring */}
@@ -342,10 +342,10 @@ const MarkHome = () => {
                   cy="250"
                   r="140"
                   fill="none"
-                  stroke={bgGlowColor}
-                  strokeWidth="1"
-                  strokeDasharray="5 15"
-                  className="origin-center animate-[spin-slow_20s_linear_infinite]"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeDasharray="8 12"
+                  className="origin-center animate-[spin-slow_20s_linear_infinite] opacity-80"
                 />
 
                 {/* Solid Inner Border */}
@@ -354,9 +354,9 @@ const MarkHome = () => {
                   cy="250"
                   r="125"
                   fill="none"
-                  stroke={bgGlowColor}
-                  strokeWidth="0.5"
-                  className="opacity-50"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  className="opacity-70"
                 />
 
                 {/* Crosshairs */}
@@ -365,43 +365,43 @@ const MarkHome = () => {
                   y1="0"
                   x2="250"
                   y2="110"
-                  stroke={bgGlowColor}
-                  strokeWidth="0.5"
-                  className="opacity-40"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  className="opacity-75"
                 />
                 <line
                   x1="250"
                   y1="390"
                   x2="250"
                   y2="500"
-                  stroke={bgGlowColor}
-                  strokeWidth="0.5"
-                  className="opacity-40"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  className="opacity-75"
                 />
                 <line
                   x1="0"
                   y1="250"
                   x2="110"
                   y2="250"
-                  stroke={bgGlowColor}
-                  strokeWidth="0.5"
-                  className="opacity-40"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  className="opacity-75"
                 />
                 <line
                   x1="390"
                   y1="250"
                   x2="500"
                   y2="250"
-                  stroke={bgGlowColor}
-                  strokeWidth="0.5"
-                  className="opacity-40"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  className="opacity-75"
                 />
 
                 {/* Decorative Tech Nodes */}
-                <circle cx="250" cy="20" r="3" fill={bgGlowColor} />
-                <circle cx="250" cy="480" r="3" fill={bgGlowColor} />
-                <circle cx="20" cy="250" r="3" fill={bgGlowColor} />
-                <circle cx="480" cy="250" r="3" fill={bgGlowColor} />
+                <circle cx="250" cy="20" r="4.5" fill="currentColor" className="shadow-[0_0_8px_currentColor]" />
+                <circle cx="250" cy="480" r="4.5" fill="currentColor" className="shadow-[0_0_8px_currentColor]" />
+                <circle cx="20" cy="250" r="4.5" fill="currentColor" className="shadow-[0_0_8px_currentColor]" />
+                <circle cx="480" cy="250" r="4.5" fill="currentColor" className="shadow-[0_0_8px_currentColor]" />
               </svg>
             </div>
 

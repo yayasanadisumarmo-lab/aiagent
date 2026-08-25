@@ -215,7 +215,7 @@ export async function deleteMemory(data) {
     if (id && !isNaN(id)) {
       await db.memory.delete(id)
       deleteMemoryFromOrama(id).catch(console.error)
-      console.log(`🗑️ Memory ID ${id} berhasil dihapus oleh Mark.`)
+      console.log(`🗑️ Memory ID ${id} berhasil dihapus oleh PAIJO.`)
       return { success: true }
     }
     
@@ -415,7 +415,7 @@ export async function saveLearnedSkill({ name, description, content }) {
     const skillData = {
       id,
       name: cleanName,
-      description: description || 'Prosedur teknis teruji buatan Mark',
+      description: description || 'Prosedur teknis teruji buatan PAIJO',
       content: content.trim(),
       createdAt: existing?.createdAt || Date.now(),
       updatedAt: Date.now()

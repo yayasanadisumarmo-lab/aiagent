@@ -159,9 +159,22 @@ export const useMarkAgent = () => {
           }
         }
 
+        const now = new Date()
+        const hour = now.getHours()
+        let timeGreeting = 'Selamat pagi'
+        if (hour >= 4 && hour < 11) {
+          timeGreeting = 'Selamat pagi'
+        } else if (hour >= 11 && hour < 15) {
+          timeGreeting = 'Selamat siang'
+        } else if (hour >= 15 && hour < 18) {
+          timeGreeting = 'Selamat sore'
+        } else {
+          timeGreeting = 'Selamat malam'
+        }
+
         try {
           await handlePlanningCommand(
-            `Aplikasi baru saja dinyalakan. Sapa pengguna dengan singkat, natural, hangat, dan tidak kaku layaknya teman dekat/asisten pribadi yang hidup (gunakan nama pengguna dari profil jika ada).${timeContext}${topicContext}\nTunjukkan bahwa kamu siap dan aktif merespons tanpa bersikap seperti robot kaku atau customer service.`,
+            `Aplikasi baru saja dinyalakan. Waktu komputer saat ini adalah ${timeGreeting}. Berikan sapaan pembuka "${timeGreeting} Mas Wun!" yang ramah, hangat, sopan, dan bersemangat khas P.A.I.J.O.${timeContext}${topicContext}\nTunjukkan bahwa seluruh sistem P.A.I.J.O siap mendampingi dan melayani Mas Wun hari ini.`,
             null, // waContext
             false, // isAutonomous
             null, // autonomousInitialMessage

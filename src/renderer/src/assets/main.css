@@ -12,21 +12,21 @@
   default: false;
   prefersdark: false;
   color-scheme: "dark";
-  --color-base-100: oklch(20.84% 0.008 17.911);
-  --color-base-200: oklch(18.522% 0.007 17.911);
-  --color-base-300: oklch(16.203% 0.007 17.911);
-  --color-base-content: #cac9c9;
-  --color-primary: #1fb854;
+  --color-base-100: #0a0f18;
+  --color-base-200: #0d1522;
+  --color-base-300: #101c2e;
+  --color-base-content: #d1e4f0;
+  --color-primary: #00d2ff;
   --color-primary-content: oklch(0% 0 0);
-  --color-secondary: oklch(69.776% 0.135 168.327);
+  --color-secondary: #0ea5e9;
   --color-secondary-content: oklch(13.955% 0.027 168.327);
-  --color-accent: oklch(70.628% 0.119 185.713);
+  --color-accent: #38bdf8;
   --color-accent-content: oklch(14.125% 0.023 185.713);
-  --color-neutral: #19362d;
-  --color-neutral-content: oklch(86.139% 0.007 171.364);
-  --color-info: oklch(72.06% 0.191 231.6);
+  --color-neutral: #0e1e2d;
+  --color-neutral-content: #94a3b8;
+  --color-info: #38bdf8;
   --color-info-content: oklch(0% 0 0);
-  --color-success: oklch(64.8% 0.15 160);
+  --color-success: #00d2ff;
   --color-success-content: oklch(0% 0 0);
   --color-warning: oklch(84.71% 0.199 83.87);
   --color-warning-content: oklch(0% 0 0);
@@ -169,17 +169,17 @@ html, body, #root {
 
 .audio-glow-listening {
   box-shadow:
-    0 0 40px rgba(31, 184, 84, 0.15),
-    0 0 80px rgba(31, 184, 84, 0.08),
-    0 0 120px rgba(31, 184, 84, 0.04);
+    0 0 40px rgba(0, 210, 255, 0.2),
+    0 0 80px rgba(0, 210, 255, 0.1),
+    0 0 120px rgba(0, 210, 255, 0.05);
   animation: glow-pulse-listen 2s ease-in-out infinite;
 }
 
 .audio-glow-speaking {
   box-shadow:
-    0 0 40px rgba(82, 39, 255, 0.2),
-    0 0 80px rgba(82, 39, 255, 0.1),
-    0 0 120px rgba(82, 39, 255, 0.05);
+    0 0 40px rgba(14, 165, 233, 0.25),
+    0 0 80px rgba(14, 165, 233, 0.12),
+    0 0 120px rgba(14, 165, 233, 0.06);
   animation: glow-pulse-speak 1.5s ease-in-out infinite;
 }
 
@@ -187,13 +187,13 @@ html, body, #root {
   0%,
   100% {
     box-shadow:
-      0 0 40px rgba(31, 184, 84, 0.15),
-      0 0 80px rgba(31, 184, 84, 0.08);
+      0 0 40px rgba(0, 210, 255, 0.2),
+      0 0 80px rgba(0, 210, 255, 0.1);
   }
   50% {
     box-shadow:
-      0 0 60px rgba(31, 184, 84, 0.25),
-      0 0 100px rgba(31, 184, 84, 0.12);
+      0 0 60px rgba(0, 210, 255, 0.35),
+      0 0 100px rgba(0, 210, 255, 0.18);
   }
 }
 

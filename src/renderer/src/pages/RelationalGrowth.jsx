@@ -103,7 +103,7 @@ function describePersonality(traits) {
   if (obedience >= 0.7) parts.push('sangat penurut')
   else if (obedience <= 0.3) parts.push('berani membantah')
 
-  return `Mark saat ini bersikap ${parts.join(', ')}.`
+  return `P.A.I.J.O. saat ini bersikap ${parts.join(', ')}.`
 }
 
 const TraitRing = ({ value, color, icon: Icon, label, desc, ring }) => {
@@ -169,7 +169,7 @@ const RelationalGrowth = () => {
   const handleReset = async () => {
     const result = await confirm({
       title: 'Reset Sifat Hubungan?',
-      message: 'Ini akan mereset semua trait Mark ke netral (0.5). Hubungan akan dimulai dari awal. Lanjutkan?',
+      message: 'Ini akan mereset semua trait P.A.I.J.O. ke netral (0.5). Hubungan akan dimulai dari awal. Lanjutkan?',
       isError: true,
       confirmText: 'Ya, Reset'
     })
@@ -226,7 +226,7 @@ const RelationalGrowth = () => {
               <div>
                 <h1 className="text-2xl font-bold">Relational Growth</h1>
                 <p className="opacity-50 text-sm mt-1">
-                  Statistik kepribadian & hubungan Mark denganmu.
+                  Statistik kepribadian & hubungan P.A.I.J.O. denganmu.
                 </p>
               </div>
             </div>

@@ -98,7 +98,7 @@ export default function Plugins() {
           popover: {
             title: '1. Buat Plugin',
             description:
-              'Klik tombol ini untuk membuat fungsi/plugin baru. Fitur baru yang kamu tulis di sini bakal otomatis dipahami oleh Mark.',
+              'Klik tombol ini untuk membuat fungsi/plugin baru. Fitur baru yang kamu tulis di sini bakal otomatis dipahami oleh P.A.I.J.O..',
             side: 'bottom',
             align: 'start'
           }
@@ -117,7 +117,7 @@ export default function Plugins() {
           popover: {
             title: '3. Reload Plugin',
             description:
-              'Kalau kamu abis ngedit file plugin secara manual lewat VS Code, tekan tombol ini supaya Mark memuat ulang versi terbarunya.',
+              'Kalau kamu abis ngedit file plugin secara manual lewat VS Code, tekan tombol ini supaya P.A.I.J.O. memuat ulang versi terbarunya.',
             side: 'bottom'
           }
         }
@@ -188,7 +188,7 @@ export default function Plugins() {
               </button>
               <div>
                 <h1 className="text-2xl font-bold">Plugin Manager</h1>
-                <p className="opacity-50 text-sm mt-1">Buat dan kelola custom skill lokal buat Mark.</p>
+                <p className="opacity-50 text-sm mt-1">Buat dan kelola custom skill lokal buat P.A.I.J.O..</p>
               </div>
             </div>
             <div className="flex items-center gap-2">

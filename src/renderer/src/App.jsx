@@ -182,7 +182,7 @@ const MainLayout = () => {
 function App() {
   const [hasConfig, setHasConfig] = useState(true)
   const [isChecking, setIsChecking] = useState(true)
-  const [loadingText, setLoadingText] = useState('Membangunkan Mark...')
+  const [loadingText, setLoadingText] = useState('Memanaskan Mesin P.A.I.J.O...')
   const [showRecovery, setShowRecovery] = useState(false)
 
   useEffect(() => {
@@ -232,7 +232,7 @@ function App() {
               setLoadingText(`Mengunduh Memori AI... ${percent}% (${loadedMB}MB / ${totalMB}MB)`)
             }
           } else if (info.status === 'done' || info.status === 'ready') {
-            setLoadingText('Membangunkan Mark...')
+            setLoadingText('Memanaskan Mesin P.A.I.J.O...')
           }
         })
       } catch (e) {
@@ -262,7 +262,7 @@ function App() {
               setLoadingText(`Mengunduh Voice Engine... ${percent}% (${loadedMB}MB / ${totalMB}MB)`)
             }
           } else if (info.status === 'done' || info.status === 'ready') {
-            setLoadingText('Membangunkan Mark...')
+            setLoadingText('Memanaskan Mesin P.A.I.J.O...')
           }
         })
       } catch (e) {
@@ -286,13 +286,43 @@ function App() {
 
   if (isChecking) {
     return (
-      <div className="relative h-screen w-screen overflow-hidden bg-base-300 rounded-xl flex flex-col">
+      <div className="relative h-screen w-screen overflow-hidden bg-[#050914] rounded-xl flex flex-col select-none">
         <WindowControls />
-        <div className="flex-1 flex flex-col items-center justify-center gap-5">
-          <span className="loading loading-infinity w-16 text-primary"></span>
-          <p className="text-sm font-semibold tracking-[0.2em] text-white/40 uppercase animate-pulse text-center px-4">
-            {loadingText}
-          </p>
+        
+        {/* Hologram Scanlines & Tech Backdrop */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_bottom,transparent_50%,rgba(0,0,0,0.25)_50%)] bg-[length:100%_4px] opacity-30 pointer-events-none mix-blend-overlay z-0" />
+        
+        <div className="flex-1 flex flex-col items-center justify-center gap-6 z-10 px-4">
+          {/* Holographic Arc Reactor Rotating HUD Loader */}
+          <div className="relative w-36 h-36 flex items-center justify-center">
+            <div className="absolute inset-0 rounded-full bg-amber-500/20 blur-xl animate-pulse" />
+            <svg viewBox="0 0 200 200" className="w-full h-full animate-[spin_10s_linear_infinite] text-amber-400">
+              <circle cx="100" cy="100" r="90" fill="none" stroke="currentColor" strokeWidth="1.5" strokeDasharray="10 15" opacity="0.5" />
+              <circle cx="100" cy="100" r="75" fill="none" stroke="currentColor" strokeWidth="2.5" strokeDasharray="40 20 10 20" opacity="0.8" strokeLinecap="round" />
+            </svg>
+            <svg viewBox="0 0 200 200" className="absolute inset-0 w-full h-full animate-[spin-reverse_7s_linear_infinite] text-amber-500">
+              <circle cx="100" cy="100" r="60" fill="none" stroke="currentColor" strokeWidth="2" strokeDasharray="25 15 5 15" opacity="0.9" />
+              <circle cx="100" cy="100" r="45" fill="none" stroke="currentColor" strokeWidth="1" strokeDasharray="4 6" opacity="0.6" />
+            </svg>
+            <div className="w-6 h-6 rounded-full bg-amber-400/80 shadow-[0_0_20px_#ff9900] animate-ping" />
+          </div>
+
+          {/* Prominent P.A.I.J.O. Brand Header */}
+          <div className="flex flex-col items-center text-center space-y-1.5">
+            <h1 className="text-3xl md:text-4xl font-extrabold tracking-[0.25em] text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-400 to-orange-500 drop-shadow-[0_0_25px_rgba(255,153,0,0.6)]">
+              P.A.I.J.O.
+            </h1>
+            <p className="text-xs md:text-sm font-mono tracking-widest text-amber-300/80 font-medium max-w-md">
+              (Personal Artificial Intelligence Jagoan Otomatisasi)
+            </p>
+          </div>
+
+          {/* Diagnostic Loading State Readout */}
+          <div className="flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-950/40 border border-amber-500/30 text-amber-300 text-xs font-mono tracking-wider shadow-inner">
+            <span className="w-2 h-2 rounded-full bg-amber-400 animate-ping" />
+            <span>{loadingText}</span>
+          </div>
+
           {showRecovery && (
             <div className="absolute bottom-10 flex flex-col items-center animate-fade-in">
               <p className="text-xs text-white/40 mb-3 text-center max-w-xs">

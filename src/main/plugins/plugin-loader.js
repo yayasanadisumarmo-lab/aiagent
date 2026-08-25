@@ -8,7 +8,7 @@ let pluginHandlers = {}
 
 export const getPluginsDir = () => {
   const docPath = app.getPath('documents')
-  const pluginDir = path.join(docPath, 'Mark Plugins')
+  const pluginDir = path.join(docPath, 'PAIJO Plugins')
   if (!fs.existsSync(pluginDir)) {
     fs.mkdirSync(pluginDir, { recursive: true })
   }

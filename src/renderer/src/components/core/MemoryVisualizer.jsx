@@ -45,7 +45,7 @@ const MemoryVisualizer = ({ isOpen, onClose }) => {
 
         // 0. Core Node
         const coreNodeId = 'core';
-        nodes.push({ id: coreNodeId, name: 'Mark Neural Core', group: 0, val: 25, color: '#00ff66' });
+        nodes.push({ id: coreNodeId, name: 'P.A.I.J.O. Core Matrix', group: 0, val: 25, color: '#00d2ff' });
 
         // 1. Sub-Cores (Main Branches)
         nodes.push({ id: 'archives-root', name: 'Chat History', group: 1, val: 15, color: '#00e5ff' });

@@ -141,7 +141,7 @@ const GoogleWorkspace = () => {
               <div>
                 <h1 className="text-2xl font-bold">Google Workspace</h1>
                 <p className="opacity-50 text-sm mt-1">
-                  Integrasi Drive, Calendar, dan Gmail ke Mark AI.
+                  Integrasi Drive, Calendar, dan Gmail ke P.A.I.J.O. AI.
                 </p>
               </div>
             </div>
@@ -153,7 +153,7 @@ const GoogleWorkspace = () => {
                 <FaExclamationTriangle /> Panduan Singkat
               </h2>
               <p className="text-sm opacity-80 mb-4">
-                Untuk menghubungkan Mark dengan Google Workspace milikmu, kamu harus membuat **OAuth
+                Untuk menghubungkan P.A.I.J.O. dengan Google Workspace milikmu, kamu harus membuat **OAuth
                 Client ID** bertipe Desktop App di Google Cloud Console.
               </p>
               <ol className="list-decimal list-inside text-sm space-y-2 opacity-80 bg-base-200 p-4 rounded-xl font-mono">
@@ -223,7 +223,7 @@ const GoogleWorkspace = () => {
                   <h3 className="font-bold text-warning text-sm">Peringatan Keamanan</h3>
                   <p className="text-xs opacity-70 mt-1">
                     Kredensial ini disimpan secara lokal dan aman di databasemu. Jangan pernah
-                    membagikan Client Secret ke orang lain. Mark hanya akan menggunakan kredensial
+                    membagikan Client Secret ke orang lain. P.A.I.J.O. hanya akan menggunakan kredensial
                     ini untuk meminta akses ke akun Google-mu secara resmi.
                   </p>
                 </div>
@@ -236,8 +236,8 @@ const GoogleWorkspace = () => {
                     <h3 className="font-bold text-sm">Status Koneksi</h3>
                     <p className="text-xs opacity-70">
                       {isConnected
-                        ? 'Mark terhubung dan memiliki akses ke Google Workspace.'
-                        : 'Mark belum diberikan akses masuk ke Google Workspace.'}
+                        ? 'P.A.I.J.O. terhubung dan memiliki akses ke Google Workspace.'
+                        : 'P.A.I.J.O. belum diberikan akses masuk ke Google Workspace.'}
                     </p>
                   </div>
                   <div

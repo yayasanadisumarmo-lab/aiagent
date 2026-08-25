@@ -48,7 +48,7 @@ const DOM_PARSER_SCRIPT = `
         <svg class="mark-spin" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
           <path d="M21 12a9 9 0 1 1-6.219-8.56"></path>
         </svg>
-        <span class="mark-pulse">Mark is working...</span>
+        <span class="mark-pulse">PAIJO is working...</span>
       </div>
     \`;
     Object.assign(blocker.style, {
@@ -157,7 +157,7 @@ function getOrCreateBrowser(sessionId = 'default') {
     show: false,
     width: 1280,
     height: 800,
-    title: `Mark Browser (${sessionId})`,
+    title: `PAIJO Browser (${sessionId})`,
     autoHideMenuBar: true,
     webPreferences: {
       nodeIntegration: false,
@@ -259,7 +259,7 @@ function getOrCreateBrowser(sessionId = 'default') {
               b.style.justifyContent = 'center';
               b.style.alignItems = 'flex-start';
               b.style.paddingTop = '24px';
-              b.innerHTML = \`<div style="background: rgba(25, 54, 45, 0.9); backdrop-filter: blur(8px); border: 1px solid rgba(31, 184, 84, 0.4); border-radius: 30px; padding: 10px 20px; display: flex; align-items: center; gap: 10px; color: #1fb854; font-family: system-ui, sans-serif; font-weight: 600; font-size: 14px; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.4); pointer-events: none;"><svg class="mark-spin" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-6.219-8.56"></path></svg><span class="mark-pulse">Mark is working...</span></div>\`;
+              b.innerHTML = \`<div style="background: rgba(25, 54, 45, 0.9); backdrop-filter: blur(8px); border: 1px solid rgba(31, 184, 84, 0.4); border-radius: 30px; padding: 10px 20px; display: flex; align-items: center; gap: 10px; color: #1fb854; font-family: system-ui, sans-serif; font-weight: 600; font-size: 14px; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.4); pointer-events: none;"><svg class="mark-spin" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-6.219-8.56"></path></svg><span class="mark-pulse">PAIJO is working...</span></div>\`;
             }
           `
           )
@@ -566,14 +566,14 @@ export async function executeAction(data, sessionId = 'default') {
                   <path d="M2 17l10 5 10-5"></path>
                   <path d="M2 12l10 5 10-5"></path>
                 </svg>
-                <div style="font-weight: 600; color: #f8fafc; font-size: 15px; letter-spacing: 0.5px;">Mark paused for input</div>
+                <div style="font-weight: 600; color: #f8fafc; font-size: 15px; letter-spacing: 0.5px;">PAIJO paused for input</div>
               </div>
               
               <div style="font-size: 13px; color: #94a3b8; line-height: 1.5; background: rgba(0,0,0,0.2); padding: 10px; border-radius: 8px; border-left: 3px solid #1fb854;">
                 \${aiMessage}
               </div>
               
-              <input type="text" id="mark-user-input" placeholder="Add a comment for Mark (optional)..." style="background: rgba(15, 23, 42, 0.6); color: #f8fafc; padding: 12px 14px; border: 1px solid rgba(31, 184, 84, 0.4); border-radius: 8px; font-size: 13px; outline: none; transition: all 0.2s;" onfocus="this.style.borderColor='#1fb854'; this.style.boxShadow='0 0 0 2px rgba(31, 184, 84, 0.2)';" onblur="this.style.borderColor='rgba(31, 184, 84, 0.4)'; this.style.boxShadow='none';"/>
+              <input type="text" id="mark-user-input" placeholder="Beri komentar atau instruksi untuk PAIJO (opsional)..." style="background: rgba(15, 23, 42, 0.6); color: #f8fafc; padding: 12px 14px; border: 1px solid rgba(31, 184, 84, 0.4); border-radius: 8px; font-size: 13px; outline: none; transition: all 0.2s;" onfocus="this.style.borderColor='#1fb854'; this.style.boxShadow='0 0 0 2px rgba(31, 184, 84, 0.2)';" onblur="this.style.borderColor='rgba(31, 184, 84, 0.4)'; this.style.boxShadow='none';"/>
               
               <button id="mark-btn-selesai" style="background: #1fb854; color: #0f172a; padding: 12px; border: none; border-radius: 8px; font-weight: 600; font-size: 14px; cursor: pointer; transition: all 0.2s;" onmouseover="this.style.background='#22c55e'; this.style.transform='translateY(-1px)';" onmouseout="this.style.background='#1fb854'; this.style.transform='translateY(0)';">
                 Resume Automation
@@ -661,7 +661,7 @@ export async function takeScreenshot(filename = 'screenshot.png', sessionId = 'd
   try {
     const image = await session.window.webContents.capturePage()
     const buffer = image.toPNG()
-    const savePath = path.join(os.homedir(), 'Documents', 'Mark Workspace', filename)
+    const savePath = path.join(os.homedir(), 'Documents', 'PAIJO Workspace', filename)
     
     const dir = path.dirname(savePath)
     if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true })

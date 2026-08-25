@@ -105,7 +105,7 @@ Tulis instruksi mendetail untuk AI di sini...
                 </svg>
               </button>
               <div>
-                <h1 className="text-2xl font-bold">Mark Skills</h1>
+                <h1 className="text-2xl font-bold">PAIJO Skills</h1>
                 <p className="opacity-50 text-sm mt-1">
                   Daftar kemampuan kustom AI yang diinstal via Markdown.
                 </p>
